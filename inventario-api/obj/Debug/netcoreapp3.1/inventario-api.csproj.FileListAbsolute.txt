@@ -13,7 +13,6 @@ C:\Users\Kevin\source\repos\inventario-api\inventario-api\bin\Debug\netcoreapp3.
 C:\Users\Kevin\source\repos\inventario-api\inventario-api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\Kevin\source\repos\inventario-api\inventario-api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Kevin\source\repos\inventario-api\inventario-api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Kevin\source\repos\inventario-api\inventario-api\obj\Debug\netcoreapp3.1\inventario-api.csproj.AssemblyReference.cache
 C:\Users\Kevin\source\repos\inventario-api\inventario-api\obj\Debug\netcoreapp3.1\inventario-api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Kevin\source\repos\inventario-api\inventario-api\obj\Debug\netcoreapp3.1\inventario-api.AssemblyInfoInputs.cache
 C:\Users\Kevin\source\repos\inventario-api\inventario-api\obj\Debug\netcoreapp3.1\inventario-api.AssemblyInfo.cs
@@ -26,3 +25,4 @@ C:\Users\Kevin\source\repos\inventario-api\inventario-api\obj\Debug\netcoreapp3.
 C:\Users\Kevin\source\repos\inventario-api\inventario-api\obj\Debug\netcoreapp3.1\inventario-api.dll
 C:\Users\Kevin\source\repos\inventario-api\inventario-api\obj\Debug\netcoreapp3.1\inventario-api.pdb
 C:\Users\Kevin\source\repos\inventario-api\inventario-api\obj\Debug\netcoreapp3.1\inventario-api.genruntimeconfig.cache
+C:\Users\Kevin\source\repos\inventario-api\inventario-api\obj\Debug\netcoreapp3.1\inventario-api.csproj.AssemblyReference.cache
