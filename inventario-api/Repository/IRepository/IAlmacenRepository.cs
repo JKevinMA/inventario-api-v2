@@ -10,7 +10,7 @@ namespace inventario_api.Repository.IRepository
     {
         public Result<List<AlmacenModel>> obtenerAlmacenes(int localId);
 
-        public Result<List<AlmacenModel>> obtenerAlmacenesMTM();
+        public Result<List<AlmacenModel>> obtenerAlmacenesMTM(int su);
         public Result<int> crearAlmacenMTM(AlmacenModel o);
         public Result<int> actualizarAlmacenMTM(AlmacenModel o);
         public Result<int> eliminarAlmacenMTM(int id);

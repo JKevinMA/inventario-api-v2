@@ -55,7 +55,7 @@ namespace inventario_api.Repository
 
             return r;
         }
-        public Result<List<CategoriaModel>> obtenerCategoriasMTM()
+        public Result<List<CategoriaModel>> obtenerCategoriasMTM(int su)
         {
             _bd = new Connection();
             List<CategoriaModel> lista = new List<CategoriaModel>();
@@ -66,6 +66,7 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.CategoriasMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su", su);
                     sqlCommand.Connection = con;
                     con.Open();
 

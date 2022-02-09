@@ -8,7 +8,7 @@ namespace inventario_api.Repository.IRepository
 {
     public interface IUsuarioAreaRepository
     {
-        public Result<List<UsuarioAreaModel>> obtenerUsuariosAreaMTM();
+        public Result<List<UsuarioAreaModel>> obtenerUsuariosAreaMTM(int su);
 
         public Result<int> crearUsuarioAreaMTM(UsuarioAreaModel o);
 

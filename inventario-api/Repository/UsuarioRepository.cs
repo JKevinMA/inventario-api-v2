@@ -41,6 +41,7 @@ namespace inventario_api.Repository
                                 Administrador = bool.Parse(reader["Administrador"].ToString()),
                                 Supervisor = bool.Parse(reader["Supervisor"].ToString()),
                                 Inventario = bool.Parse(reader["Inventario"].ToString()),
+                                Su = int.Parse(reader["Su"].ToString()),
                             };
                         }
                         r.Success = true;
@@ -62,7 +63,7 @@ namespace inventario_api.Repository
             return r;
         }
 
-        public Result<List<UsuarioModel>> obtenerUsuariosMTM()
+        public Result<List<UsuarioModel>> obtenerUsuariosMTM(int su)
         {
             _bd = new Connection();
             List<UsuarioModel> lista = new List<UsuarioModel>();
@@ -73,6 +74,7 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.UsuariosMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su", su);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -179,6 +181,7 @@ namespace inventario_api.Repository
                     sqlCommand.Parameters.AddWithValue("@Supervisor", o.Supervisor);
                     sqlCommand.Parameters.AddWithValue("@Inventario", o.Inventario);
                     sqlCommand.Parameters.AddWithValue("@EmpresaId", o.EmpresaId);
+                    sqlCommand.Parameters.AddWithValue("@Su", o.Su);
                     sqlCommand.Connection = con;
                     con.Open();
 

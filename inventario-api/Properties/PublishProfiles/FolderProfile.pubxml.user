@@ -4,7 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\Kevin\source\repos\inventario-api\inventario-api\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
-    <History>True|2021-12-13T13:47:17.9217918Z;</History>
+    <_PublishTargetUrl>C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2022-02-08T17:10:02.3934163Z;True|2022-02-02T11:31:30.9542650-05:00;True|2021-12-13T08:47:17.9217918-05:00;</History>
   </PropertyGroup>
 </Project>

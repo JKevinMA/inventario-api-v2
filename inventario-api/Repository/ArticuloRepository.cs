@@ -103,7 +103,7 @@ namespace inventario_api.Repository
             return r;
         }
 
-        public Result<List<ArticuloModel>> obtenerArticulosMTM()
+        public Result<List<ArticuloModel>> obtenerArticulosMTM(int su)
         {
             _bd = new Connection();
             List<ArticuloModel> lista = new List<ArticuloModel>();
@@ -114,6 +114,7 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.ArticulosMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su", su);
                     sqlCommand.Connection = con;
                     con.Open();
 

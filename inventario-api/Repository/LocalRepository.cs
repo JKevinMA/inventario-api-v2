@@ -34,7 +34,8 @@ namespace inventario_api.Repository
                             {
                                 LocalId = int.Parse(reader["LocalId"].ToString()),
                                 EmpresaId = int.Parse(reader["EmpresaId"].ToString()),
-                                Descripcion = reader["Descripcion"].ToString()
+                                Descripcion = reader["Descripcion"].ToString(),
+                                Habilitado = bool.Parse(reader["habilitado"].ToString())
                             });
                         }
                         r.Success = true;
@@ -56,7 +57,7 @@ namespace inventario_api.Repository
             return r;
         }
 
-        public Result<List<LocalModel>> obtenerLocalesMTM()
+        public Result<List<LocalModel>> obtenerLocalesMTM(int su)
         {
             _bd = new Connection();
             List<LocalModel> lista = new List<LocalModel>();
@@ -67,6 +68,8 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.LocalesMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su", su);
+
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -79,7 +82,8 @@ namespace inventario_api.Repository
                                 LocalId = int.Parse(reader["LocalId"].ToString()),
                                 EmpresaId = int.Parse(reader["EmpresaId"].ToString()),
                                 Descripcion = reader["Descripcion"].ToString(),
-                                Empresa = reader["Empresa"].ToString()
+                                Empresa = reader["Empresa"].ToString(),
+                                Habilitado = bool.Parse(reader["habilitado"].ToString())
                             });
                         }
                         r.Success = true;
@@ -113,6 +117,7 @@ namespace inventario_api.Repository
                     SqlCommand sqlCommand = new SqlCommand(Queries.CrearLocalMtm, con);
                     sqlCommand.Parameters.AddWithValue("@DESCRIPCION", o.Descripcion);
                     sqlCommand.Parameters.AddWithValue("@EMPRESAID", o.EmpresaId);
+                    sqlCommand.Parameters.AddWithValue("@HABILITADO", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -150,6 +155,7 @@ namespace inventario_api.Repository
                     sqlCommand.Parameters.AddWithValue("@DESCRIPCION", o.Descripcion);
                     sqlCommand.Parameters.AddWithValue("@EMPRESAID", o.EmpresaId);
                     sqlCommand.Parameters.AddWithValue("@LOCALID", o.LocalId);
+                    sqlCommand.Parameters.AddWithValue("@HABILITADO", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 

@@ -33,28 +33,28 @@ namespace inventario_api.Repository
 
         //Mantenimiento
         //Empresas
-        public static string EmpresasMtm = "Select * from EMPRESA order by descripcion";
-        public static string CrearEmpresaMtm = "Insert into EMPRESA (descripcion) values (@DESCRIPCION)";
+        public static string EmpresasMtm = "Select * from EMPRESA where su = @su order by descripcion ";
+        public static string CrearEmpresaMtm = "Insert into EMPRESA (descripcion,su) values (@DESCRIPCION,@SU)";
         public static string ActualizarEmpresaMtm = "Update EMPRESA set descripcion = @DESCRIPCION where empresaId = @EMPRESAID";
         public static string EliminarEmpresaMtm = "Delete from EMPRESA where empresaid =  @EMPRESAID";
 
         //Articulos
         public static string ArticulosPorEmpresa = "Select a.*,e.descripcion as empresa,c.descripcion as categoria,f.descripcion as familia,um.descripcion as unidadmedida from ARTICULO a inner join empresa e on e.empresaid = a.empresaid inner join categoria c on a.categoriaid=c.categoriaid inner join familia f on a.familiaid = f.familiaid inner join unidadmedida um on a.unidadmedidaid = um.unidadmedidaid WHERE a.empresaId = @empresaId order by a.descripcion";
-        public static string ArticulosMtm = "Select a.*,e.descripcion as empresa,c.descripcion as categoria,f.descripcion as familia,um.descripcion as unidadmedida from ARTICULO a inner join empresa e on e.empresaid = a.empresaid inner join categoria c on a.categoriaid=c.categoriaid inner join familia f on a.familiaid = f.familiaid inner join unidadmedida um on a.unidadmedidaid = um.unidadmedidaid order by a.descripcion,a.empresaid";
+        public static string ArticulosMtm = "Select a.*,e.descripcion as empresa,c.descripcion as categoria,f.descripcion as familia,um.descripcion as unidadmedida from ARTICULO a inner join empresa e on e.empresaid = a.empresaid inner join categoria c on a.categoriaid=c.categoriaid inner join familia f on a.familiaid = f.familiaid inner join unidadmedida um on a.unidadmedidaid = um.unidadmedidaid where e.su = @su  order by a.descripcion,a.empresaid";
         public static string CrearArticuloMtm = "Insert into ARTICULO (codigo,descripcion,barcode,empresaid,categoriaid,familiaid,unidadmedidaid) values (@CODIGO,@DESCRIPCION,@BARCODE,@EMPRESAID,@CATEGORIAID,@FAMILIAID,@UNIDADMEDIDAID)";
         public static string ActualizarArticuloMtm = "Update ARTICULO set  codigo = @codigo,descripcion = @descripcion,barcode = @barcode,empresaid = @empresaid,categoriaid = @categoriaid,familiaid = @familiaid,unidadmedidaid = @unidadmedidaid where articuloid = @articuloid";
         public static string EliminarArticuloMtm = "Delete from ARTICULO where articuloid =  @ARTICULOID";
 
         //Categorias
         public static string Categorias = "Select * from CATEGORIA where EMPRESAID = @EMPRESAID";
-        public static string CategoriasMtm = "Select c.*, e.descripcion as empresa from CATEGORIA c inner join empresa e on c.empresaid = e.empresaid";
+        public static string CategoriasMtm = "Select c.*, e.descripcion as empresa from CATEGORIA c inner join empresa e on c.empresaid = e.empresaid where e.su = @su ";
         public static string CrearCategoriaMtm = "Insert into CATEGORIA (DESCRIPCION,EMPRESAID) values (@DESCRIPCION,@EMPRESAID)";
         public static string ActualizarCategoriaMtm = "Update CATEGORIA set DESCRIPCION = @DESCRIPCION,EMPRESAID=@EMPRESAID  where CATEGORIAID = @CATEGORIAID";
         public static string EliminarCategoriaMtm = "Delete from CATEGORIA where CATEGORIAID =  @CATEGORIAID";
 
         //Familias
         public static string Familias = "Select * from FAMILIA where EMPRESAID = @EMPRESAID";
-        public static string FamiliasMtm = "Select f.*, e.descripcion as empresa from FAMILIA f inner join empresa e on f.empresaid = e.empresaid";
+        public static string FamiliasMtm = "Select f.*, e.descripcion as empresa from FAMILIA f inner join empresa e on f.empresaid = e.empresaid where e.su = @su";
         public static string CrearFamiliaMtm = "Insert into FAMILIA (DESCRIPCION,EMPRESAID) values (@DESCRIPCION,@EMPRESAID)";
         public static string ActualizarFamiliaMtm = "Update FAMILIA set DESCRIPCION = @DESCRIPCION,EMPRESAID=@EMPRESAID  where FAMILIAID = @FAMILIAID";
         public static string EliminarFamiliaMtm = "Delete from FAMILIA where FAMILIAID =  @FAMILIAID";
@@ -66,10 +66,10 @@ namespace inventario_api.Repository
         public static string EliminarUnidadMedidaMtm = "Delete from UNIDADMEDIDA where UNIDADMEDIDAID =  @UNIDADMEDIDAID";
 
         //Locales
-        public static string Locales = "Select * from LOCAL where EMPRESAID = @EMPRESAID";
-        public static string LocalesMtm = "Select l.*, e.descripcion as empresa from LOCAL l inner join empresa e on l.empresaid = e.empresaid";
-        public static string CrearLocalMtm = "Insert into LOCAL (DESCRIPCION,EMPRESAID) values (@DESCRIPCION,@EMPRESAID)";
-        public static string ActualizarLocalMtm = "Update LOCAL set DESCRIPCION = @DESCRIPCION,EMPRESAID=@EMPRESAID  where LOCALID = @LOCALID";
+        public static string Locales = "Select * from LOCAL where EMPRESAID = @EMPRESAID and habilitado = 1";
+        public static string LocalesMtm = "Select l.*, e.descripcion as empresa from LOCAL l inner join empresa e on l.empresaid = e.empresaid and e.su = @su";
+        public static string CrearLocalMtm = "Insert into LOCAL (DESCRIPCION,EMPRESAID,HABILITADO) values (@DESCRIPCION,@EMPRESAID,@HABILITADO)";
+        public static string ActualizarLocalMtm = "Update LOCAL set DESCRIPCION = @DESCRIPCION,EMPRESAID=@EMPRESAID,HABILITADO=@HABILITADO  where LOCALID = @LOCALID";
         public static string EliminarLocalMtm = "Delete from LOCAL where LOCALID =  @LOCALID";
 
         //Tipos de Inventario
@@ -80,32 +80,32 @@ namespace inventario_api.Repository
 
         //Usuarios
         public static string Usuarios = "Select * from USUARIO where EMPRESAID = @EMPRESAID";
-        public static string UsuariosMtm = "Select u.*, e.descripcion as empresa from USUARIO u inner join empresa e on u.empresaid = e.empresaid";
-        public static string CrearUsuarioMtm = "Insert into USUARIO (NOMBRE,USUARIO,CLAVE,ADMINISTRADOR,SUPERVISOR,INVENTARIO,EMPRESAID) values (@NOMBRE,@USUARIO,@CLAVE,@ADMINISTRADOR,@SUPERVISOR,@INVENTARIO,@EMPRESAID)";
+        public static string UsuariosMtm = "Select u.*, e.descripcion as empresa from USUARIO u inner join empresa e on u.empresaid = e.empresaid where u.su = @su";
+        public static string CrearUsuarioMtm = "Insert into USUARIO (NOMBRE,USUARIO,CLAVE,ADMINISTRADOR,SUPERVISOR,INVENTARIO,EMPRESAID,SU) values (@NOMBRE,@USUARIO,@CLAVE,@ADMINISTRADOR,@SUPERVISOR,@INVENTARIO,@EMPRESAID,@SU)";
         public static string ActualizarUsuarioMtm = "Update USUARIO set NOMBRE = @NOMBRE,USUARIO = @USUARIO,CLAVE=@CLAVE,ADMINISTRADOR=@ADMINISTRADOR,SUPERVISOR=@SUPERVISOR,INVENTARIO=@INVENTARIO,EMPRESAID=@EMPRESAID where USUARIOID = @USUARIOID";
         public static string EliminarUsuarioMtm = "Delete from USUARIO where USUARIOID =  @USUARIOID";
 
         //Usuario Area
-        public static string UsuariosAreaMtm = "Select ua.*,u.nombre,u.usuario,a.descripcion as area,al.almacenid,al.descripcion as almacen,l.localid,l.descripcion as local,e.empresaid,e.descripcion as empresa from USUARIOAREA ua INNER JOIN usuario u on u.usuarioid = ua.usuarioid inner join area a on a.areaid = ua.areaid inner join almacen al on al.almacenid = a.almacenid inner join local l on l.localid = al.localid inner join empresa e on e.empresaid = l.empresaid ";
+        public static string UsuariosAreaMtm = "Select ua.*,u.nombre,u.usuario,a.descripcion as area,al.almacenid,al.descripcion as almacen,l.localid,l.descripcion as local,e.empresaid,e.descripcion as empresa from USUARIOAREA ua INNER JOIN usuario u on u.usuarioid = ua.usuarioid inner join area a on a.areaid = ua.areaid inner join almacen al on al.almacenid = a.almacenid inner join local l on l.localid = al.localid inner join empresa e on e.empresaid = l.empresaid where e.su = @su";
         public static string CrearUsuarioAreaMtm = "Insert into USUARIOAREA (USUARIOID,AREAID) values (@USUARIOID,@AREAID)";
         public static string EliminarUsuarioAreaMtm = "Delete from USUARIOAREA where USUARIOID =  @USUARIOID AND  AREAID =  @AREAID";
 
         //Areas
         public static string Areas = "Select * from AREA where ALMACENID = @ALMACENID";
-        public static string AreasMtm = "Select a.*, al.descripcion as almacen,l.localid,l.descripcion as local,e.empresaid,e.descripcion as empresa from AREA a inner join ALMACEN al on al.almacenid = a.almacenid inner join local l on l.localid = al.localid inner join empresa e on e.empresaid = l.empresaid ";
+        public static string AreasMtm = "Select a.*, al.descripcion as almacen,l.localid,l.descripcion as local,e.empresaid,e.descripcion as empresa from AREA a inner join ALMACEN al on al.almacenid = a.almacenid inner join local l on l.localid = al.localid inner join empresa e on e.empresaid = l.empresaid and e.su = @su ";
         public static string CrearAreaMtm = "Insert into AREA (DESCRIPCION,ALMACENID) values (@DESCRIPCION,@ALMACENID)";
         public static string ActualizarAreaMtm = "Update AREA set DESCRIPCION = @DESCRIPCION,ALMACENID=@ALMACENID  where AREAID = @AREAID";
         public static string EliminarAreaMtm = "Delete from AREA where AREAID =  @AREAID";
 
         //Almacenes
         public static string Almacenes = "Select * from ALMACEN where LOCALID = @LOCALID";
-        public static string AlmacenesMtm = "Select al.*,l.descripcion as local,e.empresaid,e.descripcion as empresa from ALMACEN al inner join local l on l.localid = al.localid inner join empresa e on e.empresaid = l.empresaid ";
+        public static string AlmacenesMtm = "Select al.*,l.descripcion as local,e.empresaid,e.descripcion as empresa from ALMACEN al inner join local l on l.localid = al.localid inner join empresa e on e.empresaid = l.empresaid and e.su = @su ";
         public static string CrearAlmacenMtm = "Insert into ALMACEN (DESCRIPCION,LOCALID) values (@DESCRIPCION,@LOCALID)";
         public static string ActualizarAlmacenMtm = "Update ALMACEN set DESCRIPCION = @DESCRIPCION,LOCALID=@LOCALID where ALMACENID = @ALMACENID";
         public static string EliminarAlmacenMtm = "Delete from ALMACEN where ALMACENID =  @ALMACENID";
 
         //Articulos Tipo Inventario
-        public static string ArticulosTipoInventarioMtm = "select at.*,ar.CODIGO,ar.DESCRIPCION as articulo,a.DESCRIPCION as area,al.almacenid,al.DESCRIPCION as almacen,l.localid, l.DESCRIPCION as local,e.empresaid,e.DESCRIPCION as empresa,ti.descripcion as tipoinventario from ARTICULOTIPOINVENTARIO at inner join AREA a on a.AREAID = at.AREAID inner join ALMACEN al on al.ALMACENID = a.ALMACENID inner join LOCAL l on l.LOCALID = al.LOCALID inner join EMPRESA e  on e.EMPRESAID=l.EMPRESAID inner join TIPOINVENTARIO ti on ti.TIPOINVENTARIOID = at.TIPOINVENTARIOID inner join ARTICULO ar on ar.ARTICULOID = at.ARTICULOID";
+        public static string ArticulosTipoInventarioMtm = "select at.*,ar.CODIGO,ar.DESCRIPCION as articulo,a.DESCRIPCION as area,al.almacenid,al.DESCRIPCION as almacen,l.localid, l.DESCRIPCION as local,e.empresaid,e.DESCRIPCION as empresa,ti.descripcion as tipoinventario from ARTICULOTIPOINVENTARIO at inner join AREA a on a.AREAID = at.AREAID inner join ALMACEN al on al.ALMACENID = a.ALMACENID inner join LOCAL l on l.LOCALID = al.LOCALID inner join EMPRESA e  on e.EMPRESAID=l.EMPRESAID inner join TIPOINVENTARIO ti on ti.TIPOINVENTARIOID = at.TIPOINVENTARIOID inner join ARTICULO ar on ar.ARTICULOID = at.ARTICULOID where e.su = @su";
         public static string CrearArticuloTipoInventarioMtm = "Insert into ARTICULOTIPOINVENTARIO (ARTICULOID,AREAID,TIPOINVENTARIOID,ORDEN,LOCALIZACION) values (@ARTICULOID,@AREAID,@TIPOINVENTARIOID,@ORDEN,@LOCALIZACION)";
         public static string ActualizarArticuloTipoInventarioMtm = "Update ARTICULOTIPOINVENTARIO set ORDEN = @ORDEN,LOCALIZACION=@LOCALIZACION where ARTICULOID = @ARTICULOID AND AREAID = @AREAID AND TIPOINVENTARIOID = @TIPOINVENTARIOID";
         public static string EliminarArticuloTipoInventarioMtm = "Delete from ARTICULOTIPOINVENTARIO where ARTICULOID = @ARTICULOID AND AREAID = @AREAID AND TIPOINVENTARIOID = @TIPOINVENTARIOID";

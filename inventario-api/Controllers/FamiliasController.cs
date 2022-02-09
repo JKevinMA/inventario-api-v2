@@ -35,11 +35,11 @@ namespace inventario_api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetMTM()
+        public IActionResult GetFamiliasMTM(int su)
         {
             try
             {
-                var res = _repo.obtenerFamiliasMTM();
+                var res = _repo.obtenerFamiliasMTM(su);
                 return StatusCode(200, res);
             }
             catch (Exception ex)

@@ -10,7 +10,7 @@ namespace inventario_api.Repository.IRepository
     {
         public Result<List<ArticuloModel>> obtenerArticulos(int tipoInventarioId, int areaId);
         public Result<List<ArticuloModel>> obtenerArticulosPorEmpresa(int empresaId);
-        public Result<List<ArticuloModel>> obtenerArticulosMTM();
+        public Result<List<ArticuloModel>> obtenerArticulosMTM(int su);
         public Result<int> crearArticuloMTM(ArticuloModel o);
         public Result<int> actualizarArticuloMTM(ArticuloModel o);
         public Result<int> eliminarArticuloMTM(int id);

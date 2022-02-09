@@ -11,7 +11,7 @@ namespace inventario_api.Repository
     public class ArticuloTipoInventarioRepository: IArticuloTipoInventarioRepository
     {
         private Connection _bd;
-        public Result<List<ArticuloTipoInventarioModel>> obtenerArticulosTipoInventarioMTM()
+        public Result<List<ArticuloTipoInventarioModel>> obtenerArticulosTipoInventarioMTM(int su)
         {
             _bd = new Connection();
             List<ArticuloTipoInventarioModel> lista = new List<ArticuloTipoInventarioModel>();
@@ -22,6 +22,7 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.ArticulosTipoInventarioMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su", su);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -40,8 +41,11 @@ namespace inventario_api.Repository
                                 Articulo = reader["Articulo"].ToString(),
                                 Area = reader["Area"].ToString(),
                                 Almacen = reader["Almacen"].ToString(),
+                                AlmacenId = int.Parse(reader["AlmacenId"].ToString()),
                                 Local = reader["Local"].ToString(),
+                                LocalId = int.Parse(reader["LocalId"].ToString()),
                                 Empresa = reader["Empresa"].ToString(),
+                                EmpresaId = int.Parse(reader["EmpresaId"].ToString()),
                                 TipoInventario = reader["TipoInventario"].ToString(),
                             });
                         }

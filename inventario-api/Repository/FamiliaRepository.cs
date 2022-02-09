@@ -55,7 +55,7 @@ namespace inventario_api.Repository
 
             return r;
         }
-        public Result<List<FamiliaModel>> obtenerFamiliasMTM()
+        public Result<List<FamiliaModel>> obtenerFamiliasMTM(int su)
         {
             _bd = new Connection();
             List<FamiliaModel> lista = new List<FamiliaModel>();
@@ -66,6 +66,7 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.FamiliasMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su", su);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -77,7 +78,8 @@ namespace inventario_api.Repository
                             {
                                 FamiliaId = int.Parse(reader["FamiliaId"].ToString()),
                                 Descripcion = reader["Descripcion"].ToString(),
-                                Empresa = reader["Empresa"].ToString()
+                                Empresa = reader["Empresa"].ToString(),
+                                EmpresaId = int.Parse(reader["EmpresaId"].ToString())
                             });
                         }
                         r.Success = true;

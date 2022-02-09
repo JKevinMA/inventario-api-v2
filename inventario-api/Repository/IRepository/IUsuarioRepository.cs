@@ -10,7 +10,7 @@ namespace inventario_api.Repository.IRepository
     {
         public Result<UsuarioModel> Login(UsuarioLogin u);
 
-        public Result<List<UsuarioModel>> obtenerUsuariosMTM();
+        public Result<List<UsuarioModel>> obtenerUsuariosMTM(int su);
 
 
         public Result<int> crearUsuarioMTM(UsuarioModel o);

@@ -56,7 +56,7 @@ namespace inventario_api.Repository
             return r;
         }
 
-        public Result<List<AreaModel>> obtenerAreasMTM()
+        public Result<List<AreaModel>> obtenerAreasMTM(int su)
         {
             _bd = new Connection();
             List<AreaModel> lista = new List<AreaModel>();
@@ -67,6 +67,7 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.AreasMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su", su);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -150,7 +151,7 @@ namespace inventario_api.Repository
             {
                 try
                 {
-                    SqlCommand sqlCommand = new SqlCommand(Queries.ActualizarAlmacenMtm, con);
+                    SqlCommand sqlCommand = new SqlCommand(Queries.ActualizarAreaMtm, con);
                     sqlCommand.Parameters.AddWithValue("@Descripcion", o.Descripcion);
                     sqlCommand.Parameters.AddWithValue("@AlmacenId", o.AlmacenId);
                     sqlCommand.Parameters.AddWithValue("@AreaId", o.AreaId);

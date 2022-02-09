@@ -21,11 +21,11 @@ namespace inventario_api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetMTM()
+        public IActionResult GetMTM(int su)
         {
             try
             {
-                var res = _repo.obtenerUsuariosAreaMTM();
+                var res = _repo.obtenerUsuariosAreaMTM(su);
                 return StatusCode(200, res);
             }
             catch (Exception ex)

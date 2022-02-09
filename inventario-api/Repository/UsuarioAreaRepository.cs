@@ -11,7 +11,7 @@ namespace inventario_api.Repository
     public class UsuarioAreaRepository: IUsuarioAreaRepository
     {
         private Connection _bd;
-        public Result<List<UsuarioAreaModel>> obtenerUsuariosAreaMTM()
+        public Result<List<UsuarioAreaModel>> obtenerUsuariosAreaMTM(int su)
         {
             _bd = new Connection();
             List<UsuarioAreaModel> lista = new List<UsuarioAreaModel>();
@@ -22,6 +22,7 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.UsuariosAreaMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su",su);
                     sqlCommand.Connection = con;
                     con.Open();
 

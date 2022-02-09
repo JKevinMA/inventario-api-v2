@@ -11,7 +11,7 @@ namespace inventario_api.Repository
     public class EmpresaRepository:IEmpresaRepository
     {
         private Connection _bd;
-        public Result<List<EmpresaModel>> obtenerEmpresasMTM()
+        public Result<List<EmpresaModel>> obtenerEmpresasMTM(int su)
         {
             _bd = new Connection();
             List<EmpresaModel> lista = new List<EmpresaModel>();
@@ -22,6 +22,7 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.EmpresasMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su", su);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -65,6 +66,7 @@ namespace inventario_api.Repository
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.CrearEmpresaMtm, con);
                     sqlCommand.Parameters.AddWithValue("@DESCRIPCION", o.Descripcion);
+                    sqlCommand.Parameters.AddWithValue("@SU", o.Su);
                     sqlCommand.Connection = con;
                     con.Open();
 

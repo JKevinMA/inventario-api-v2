@@ -8,7 +8,7 @@ namespace inventario_api.Repository.IRepository
 {
     public interface IArticuloTipoInventarioRepository
     {
-        public Result<List<ArticuloTipoInventarioModel>> obtenerArticulosTipoInventarioMTM();
+        public Result<List<ArticuloTipoInventarioModel>> obtenerArticulosTipoInventarioMTM(int su);
 
 
         public Result<int> crearArticuloTipoInventarioMTM(ArticuloTipoInventarioModel o);

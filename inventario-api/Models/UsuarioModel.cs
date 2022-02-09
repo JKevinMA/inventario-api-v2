@@ -32,6 +32,9 @@ namespace inventario_api.Models
 
         [JsonProperty("empresa")]
         public string Empresa { get; set; }
+
+        [JsonProperty("su")]
+        public int Su { get; set; }
     }
 
     public partial class UsuarioLogin

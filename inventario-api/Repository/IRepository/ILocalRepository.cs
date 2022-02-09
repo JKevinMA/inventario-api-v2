@@ -10,7 +10,7 @@ namespace inventario_api.Repository.IRepository
     {
         public Result<List<LocalModel>> obtenerLocales(int empresaId);
 
-        public Result<List<LocalModel>> obtenerLocalesMTM();
+        public Result<List<LocalModel>> obtenerLocalesMTM(int su);
 
 
         public Result<int> crearLocalMTM(LocalModel o);

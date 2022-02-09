@@ -21,11 +21,11 @@ namespace inventario_api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetEmpresasMTM()
+        public IActionResult GetEmpresasMTM(int su)
         {
             try
             {
-                var res = _repo.obtenerEmpresasMTM();
+                var res = _repo.obtenerEmpresasMTM(su);
                 return StatusCode(200, res);
             }
             catch (Exception ex)

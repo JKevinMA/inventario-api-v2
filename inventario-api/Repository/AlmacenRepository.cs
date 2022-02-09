@@ -55,7 +55,7 @@ namespace inventario_api.Repository
 
             return r;
         }
-        public Result<List<AlmacenModel>> obtenerAlmacenesMTM()
+        public Result<List<AlmacenModel>> obtenerAlmacenesMTM(int su)
         {
             _bd = new Connection();
             List<AlmacenModel> lista = new List<AlmacenModel>();
@@ -66,6 +66,7 @@ namespace inventario_api.Repository
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand(Queries.AlmacenesMtm, con);
+                    sqlCommand.Parameters.AddWithValue("@su", su);
                     sqlCommand.Connection = con;
                     con.Open();
 

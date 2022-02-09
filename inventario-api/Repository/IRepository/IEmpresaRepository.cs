@@ -8,7 +8,7 @@ namespace inventario_api.Repository.IRepository
 {
     public interface IEmpresaRepository
     {
-        public Result<List<EmpresaModel>> obtenerEmpresasMTM();
+        public Result<List<EmpresaModel>> obtenerEmpresasMTM(int su);
         public Result<int> crearEmpresaMTM(EmpresaModel o);
         public Result<int> actualizarEmpresaMTM(EmpresaModel o);
         public Result<int> eliminarEmpresaMTM(int id);
