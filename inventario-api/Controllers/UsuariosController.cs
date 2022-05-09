@@ -11,6 +11,8 @@ namespace inventario_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowCrossSiteJson]
+
     public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioRepository _usuarioRepo;

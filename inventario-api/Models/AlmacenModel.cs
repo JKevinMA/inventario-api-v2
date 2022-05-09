@@ -25,6 +25,10 @@ namespace inventario_api.Models
 
         [JsonProperty("empresa")]
         public string Empresa { get; set; }
+
+        [JsonProperty("habilitado")]
+        public bool Habilitado { get; set; }
+
     }
 
     public partial class AlmacenModel

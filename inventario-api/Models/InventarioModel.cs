@@ -47,6 +47,7 @@ namespace inventario_api.Models
         public string Codigo { get; set; }
         public double AbsValDif{ get; set; }
         public double Faltante { get; set; }
+        public string UnidadMedida { get; set; }
 
     }
 }

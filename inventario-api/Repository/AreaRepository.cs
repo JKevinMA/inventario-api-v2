@@ -34,7 +34,8 @@ namespace inventario_api.Repository
                             {
                                 AreaId = int.Parse(reader["AreaId"].ToString()),
                                 AlmacenId = int.Parse(reader["AlmacenId"].ToString()),
-                                Descripcion = reader["Descripcion"].ToString()
+                                Descripcion = reader["Descripcion"].ToString(),
+                                Habilitado = bool.Parse(reader["Habilitado"].ToString())
                             });
                         }
                         r.Success = true;
@@ -85,6 +86,7 @@ namespace inventario_api.Repository
                                 Local = reader["Local"].ToString(),
                                 EmpresaId = int.Parse(reader["EmpresaId"].ToString()),
                                 Empresa = reader["Empresa"].ToString(),
+                                Habilitado = bool.Parse(reader["Habilitado"].ToString())
                             });
                         }
                         r.Success = true;
@@ -118,6 +120,7 @@ namespace inventario_api.Repository
                     SqlCommand sqlCommand = new SqlCommand(Queries.CrearAreaMtm, con);
                     sqlCommand.Parameters.AddWithValue("@Descripcion", o.Descripcion);
                     sqlCommand.Parameters.AddWithValue("@AlmacenId", o.AlmacenId);
+                    sqlCommand.Parameters.AddWithValue("@Habilitado", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -155,6 +158,7 @@ namespace inventario_api.Repository
                     sqlCommand.Parameters.AddWithValue("@Descripcion", o.Descripcion);
                     sqlCommand.Parameters.AddWithValue("@AlmacenId", o.AlmacenId);
                     sqlCommand.Parameters.AddWithValue("@AreaId", o.AreaId);
+                    sqlCommand.Parameters.AddWithValue("@Habilitado", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 

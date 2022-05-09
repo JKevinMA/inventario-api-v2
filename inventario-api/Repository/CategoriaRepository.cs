@@ -35,6 +35,7 @@ namespace inventario_api.Repository
                             {
                                 CategoriaId = int.Parse(reader["CategoriaId"].ToString()),
                                 Descripcion = reader["Descripcion"].ToString(),
+                                Codigo = reader["Codigo"].ToString()
                             });
                         }
                         r.Success = true;
@@ -79,7 +80,8 @@ namespace inventario_api.Repository
                                 CategoriaId = int.Parse(reader["CategoriaId"].ToString()),
                                 Descripcion = reader["Descripcion"].ToString(),
                                 EmpresaId = int.Parse(reader["EmpresaId"].ToString()),
-                                Empresa = reader["Empresa"].ToString()
+                                Empresa = reader["Empresa"].ToString(),
+                                Codigo = reader["Codigo"].ToString()
                             });
                         }
                         r.Success = true;
@@ -113,6 +115,7 @@ namespace inventario_api.Repository
                     SqlCommand sqlCommand = new SqlCommand(Queries.CrearCategoriaMtm, con);
                     sqlCommand.Parameters.AddWithValue("@DESCRIPCION", o.Descripcion);
                     sqlCommand.Parameters.AddWithValue("@EMPRESAID", o.EmpresaId);
+                    sqlCommand.Parameters.AddWithValue("@CODIGO", o.Codigo);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -150,6 +153,7 @@ namespace inventario_api.Repository
                     sqlCommand.Parameters.AddWithValue("@DESCRIPCION", o.Descripcion);
                     sqlCommand.Parameters.AddWithValue("@EMPRESAID", o.EmpresaId);
                     sqlCommand.Parameters.AddWithValue("@CATEGORIAID", o.CategoriaId);
+                    sqlCommand.Parameters.AddWithValue("@CODIGO", o.Codigo);
                     sqlCommand.Connection = con;
                     con.Open();
 

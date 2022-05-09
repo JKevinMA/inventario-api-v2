@@ -45,9 +45,10 @@ namespace inventario_api
             services.AddCors(options => {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   builder => {
-                                      builder.AllowAnyHeader()
-                                             .AllowAnyMethod()
-                                             .AllowAnyOrigin();
+                                      builder
+                                             .AllowAnyOrigin()
+                                             .AllowAnyHeader()
+                                             .AllowAnyMethod();
                                   }
                     );
             });

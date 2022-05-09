@@ -82,3 +82,6 @@ C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Rele
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\inventario-api.dll
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\inventario-api.pdb
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\inventario-api.genruntimeconfig.cache
+C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\System.Web.Http.dll
+C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll

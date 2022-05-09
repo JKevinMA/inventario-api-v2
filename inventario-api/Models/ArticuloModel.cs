@@ -45,6 +45,9 @@ namespace inventario_api.Models
 
         [JsonProperty("unidadMedida")]
         public string UnidadMedida { get; set; }
+
+        [JsonProperty("habilitado")]
+        public bool Habilitado { get; set; }
     }
 
     public partial class ArticuloModel

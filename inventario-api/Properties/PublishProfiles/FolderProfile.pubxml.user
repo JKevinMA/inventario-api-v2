@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
-    <History>True|2022-02-08T17:10:02.3934163Z;True|2022-02-02T11:31:30.9542650-05:00;True|2021-12-13T08:47:17.9217918-05:00;</History>
+    <History>True|2022-03-31T16:35:43.3689825Z;True|2022-03-31T11:35:33.6213395-05:00;True|2022-03-28T09:28:31.1043817-05:00;True|2022-03-28T09:17:25.7376323-05:00;True|2022-03-28T09:07:02.4574459-05:00;True|2022-03-28T09:03:31.2361575-05:00;True|2022-03-28T08:39:36.3104268-05:00;True|2022-03-25T16:37:37.5563674-05:00;True|2022-03-22T08:43:58.1737949-05:00;True|2022-03-01T09:47:43.6391926-05:00;True|2022-02-14T11:20:49.5239688-05:00;True|2022-02-08T12:10:02.3934163-05:00;True|2022-02-02T11:31:30.9542650-05:00;True|2021-12-13T08:47:17.9217918-05:00;</History>
   </PropertyGroup>
 </Project>

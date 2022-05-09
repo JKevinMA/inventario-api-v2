@@ -5,7 +5,10 @@ C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Rele
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\inventario-api.deps.json
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\inventario-api.runtimeconfig.json
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\inventario-api.pdb
+C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\System.Net.Http.Formatting.dll
+C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\System.Web.Http.dll
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.Bson.dll
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\System.Data.SqlClient.dll
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-arm64\native\sni.dll
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-x64\native\sni.dll

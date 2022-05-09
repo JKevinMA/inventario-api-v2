@@ -34,7 +34,8 @@ namespace inventario_api.Repository
                             {
                                 AlmacenId = int.Parse(reader["AlmacenId"].ToString()),
                                 Descripcion = reader["Descripcion"].ToString(),
-                                LocalId = int.Parse(reader["LocalId"].ToString())
+                                LocalId = int.Parse(reader["LocalId"].ToString()),
+                                Habilitado = bool.Parse(reader["Habilitado"].ToString())
                             });
                         }
                         r.Success = true;
@@ -82,6 +83,7 @@ namespace inventario_api.Repository
                                 EmpresaId = int.Parse(reader["EmpresaId"].ToString()),
                                 Local = reader["Local"].ToString(),
                                 Empresa = reader["Empresa"].ToString(),
+                                Habilitado = bool.Parse(reader["Habilitado"].ToString())
                             });
                         }
                         r.Success = true;
@@ -115,6 +117,7 @@ namespace inventario_api.Repository
                     SqlCommand sqlCommand = new SqlCommand(Queries.CrearAlmacenMtm, con);
                     sqlCommand.Parameters.AddWithValue("@Descripcion", o.Descripcion);
                     sqlCommand.Parameters.AddWithValue("@LocalId", o.LocalId);
+                    sqlCommand.Parameters.AddWithValue("@Habilitado", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -152,6 +155,7 @@ namespace inventario_api.Repository
                     sqlCommand.Parameters.AddWithValue("@AlmacenId", o.AlmacenId);
                     sqlCommand.Parameters.AddWithValue("@Descripcion", o.Descripcion);
                     sqlCommand.Parameters.AddWithValue("@LocalId", o.LocalId);
+                    sqlCommand.Parameters.AddWithValue("@Habilitado", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 

@@ -206,8 +206,10 @@ namespace inventario_api.Repository
                                 ArticuloId = int.Parse(reader["ArticuloId"].ToString()),
                                 Codigo = reader["Codigo"].ToString(),
                                 Articulo = reader["Articulo"].ToString(),
+                                UnidadMedida = reader["UnidadMedida"].ToString(),
                                 StockTeorico = double.Parse(reader["StockTeorico"].ToString()),
                                 Cantidad = double.Parse(reader["Cantidad"].ToString()),
+                                CantidadValidado = double.Parse(reader["CantidadValidado"].ToString()),
                                 PrecioPromedio = double.Parse(reader["PrecioPromedio"].ToString()),
                                 Faltante = double.Parse(reader["Faltante"].ToString()),
                                 AbsValDif = double.Parse(reader["AbsValDif"].ToString())

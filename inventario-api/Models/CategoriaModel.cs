@@ -11,5 +11,6 @@ namespace inventario_api.Models
         public string Descripcion { get; set; }
         public int EmpresaId { get; set; }
         public string Empresa { get; set; }
+        public string Codigo { get; set; }
     }
 }

@@ -36,7 +36,7 @@ namespace inventario_api.Repository
                             {
                                 ArticuloId = int.Parse(reader["ArticuloId"].ToString()),
                                 Codigo = reader["Codigo"].ToString(),
-                                Descripcion = reader["Descripcion"].ToString(),
+                                Descripcion = reader["Descripcion"].ToString()
                             });
                         }
                         r.Success = true;
@@ -82,6 +82,7 @@ namespace inventario_api.Repository
                                 ArticuloId = int.Parse(reader["ArticuloId"].ToString()),
                                 Codigo = reader["Codigo"].ToString(),
                                 Descripcion = reader["Descripcion"].ToString(),
+                                Habilitado = bool.Parse(reader["Habilitado"].ToString())
                             });
                         }
                         r.Success = true;
@@ -136,6 +137,7 @@ namespace inventario_api.Repository
                                 Categoria = reader["Categoria"].ToString(),
                                 Familia = reader["Familia"].ToString(),
                                 UnidadMedida = reader["UnidadMedida"].ToString(),
+                                Habilitado = bool.Parse(reader["Habilitado"].ToString())
                             });
                         }
                         r.Success = true;
@@ -174,6 +176,7 @@ namespace inventario_api.Repository
                     sqlCommand.Parameters.AddWithValue("@CategoriaId", o.CategoriaId);
                     sqlCommand.Parameters.AddWithValue("@FamiliaId", o.FamiliaId);
                     sqlCommand.Parameters.AddWithValue("@UnidadMedidaId", o.UnidadMedidaId);
+                    sqlCommand.Parameters.AddWithValue("@Habilitado", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -216,6 +219,7 @@ namespace inventario_api.Repository
                     sqlCommand.Parameters.AddWithValue("@FamiliaId", o.FamiliaId);
                     sqlCommand.Parameters.AddWithValue("@UnidadMedidaId", o.UnidadMedidaId);
                     sqlCommand.Parameters.AddWithValue("@ArticuloId", o.ArticuloId);
+                    sqlCommand.Parameters.AddWithValue("@Habilitado", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -295,6 +299,7 @@ namespace inventario_api.Repository
                     cmd.Parameters.Add("@CategoriaId", SqlDbType.Int).Value = articulo.CategoriaId;
                     cmd.Parameters.Add("@FamiliaId", SqlDbType.Int).Value = articulo.FamiliaId;
                     cmd.Parameters.Add("@UnidadMedidaId", SqlDbType.Int).Value = articulo.UnidadMedidaId;
+                    cmd.Parameters.Add("@Habilitado", SqlDbType.Bit).Value = articulo.Habilitado;
                     res = cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
