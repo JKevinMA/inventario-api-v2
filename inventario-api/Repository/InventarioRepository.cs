@@ -13,12 +13,14 @@ namespace inventario_api.Repository
     public class InventarioRepository: IInventarioRepository
     {
         private Connection _bd;
-        
+
         public Result<int> aperturarInventario(List<InventarioCabecera> inventarios)
         {
             _bd = new Connection();
             Result<int> r = new Result<int>();
-            int res=0;
+            int res = 0;
+
+
 
             SqlConnection con = _bd.sqlConnection;
             foreach (var inventario in inventarios)
@@ -32,6 +34,8 @@ namespace inventario_api.Repository
                     cmd.Parameters.Add("@tipoinventarioid", SqlDbType.Int).Value = inventario.TipoInventarioId;
                     cmd.Parameters.Add("@archivostock", SqlDbType.NVarChar).Value = inventario.ArchivoStock;
                     cmd.Parameters.Add("@usuarioid", SqlDbType.Int).Value = inventario.UsuarioId;
+                    cmd.Parameters.Add("@fechainicio", SqlDbType.DateTime).Value = inventario.FechaInicio;
+                    cmd.Parameters.Add("@fechavisualizacion", SqlDbType.DateTime).Value = inventario.FechaVisualizacion;
                     res = cmd.ExecuteNonQuery();
                     con.Close();
 
@@ -95,6 +99,8 @@ namespace inventario_api.Repository
                 {
                     SqlCommand cmd = new SqlCommand(Queries.ValidarInventarioAbierto, con);
                     cmd.Parameters.Add("@areaid", SqlDbType.Int).Value = inventario.AreaId;
+                    //cmd.Parameters.Add("@fechainicio", SqlDbType.DateTime).Value = inventario.FechaInicio;
+                    //cmd.Parameters.Add("@tipoinventarioid", SqlDbType.Int).Value = inventario.TipoInventarioId;
                     cmd.Connection = con;
                     con.Open();
 
@@ -138,9 +144,10 @@ namespace inventario_api.Repository
             {
                 try
                 {
-                    SqlCommand sqlCommand = new SqlCommand(Queries.InventariosAbiertos, con);
+                    var query = estado == "APERTURADO" ? Queries.InventariosAbiertos : Queries.InventariosCerrados;
+                    SqlCommand sqlCommand = new SqlCommand(query, con);
                     sqlCommand.Parameters.Add("@usuarioid", SqlDbType.Int).Value = usuarioId;
-                    sqlCommand.Parameters.Add("@estado", SqlDbType.NVarChar).Value = estado;
+                    //sqlCommand.Parameters.Add("@estado", SqlDbType.NVarChar).Value = estado;
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -154,6 +161,7 @@ namespace inventario_api.Repository
                                 TipoInventarioId = int.Parse(reader["TipoInventarioId"].ToString()),
                                 AreaId = int.Parse(reader["AreaId"].ToString()),
                                 FechaInicio = DateTime.Parse(reader["FechaInicio"].ToString()),
+                                FechaVisualizacion = DateTime.Parse(reader["FechaVisualizacion"].ToString()),
                                 FechaFin = DateTime.Parse(reader["FechaFin"].ToString()),
                                 ArchivoStock = reader["ArchivoStock"].ToString(),
                                 Almacen = reader["Almacen"].ToString(),

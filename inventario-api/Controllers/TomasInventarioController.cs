@@ -111,5 +111,35 @@ namespace inventario_api.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpGet("tomaconsolidadacabecera")]
+        public IActionResult GetTomasConsolidadaCabecera(string fecha,string tipo)
+        {
+            try
+            {
+                var res = _repo.obtenerTomaInventarioConsolidadaCabecera(fecha,tipo);
+                return StatusCode(200, res);
+            }
+            catch (Exception ex)
+            {
+                Log.Save(this, ex.ToString());
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpGet("tomaconsolidadadetalle")]
+        public IActionResult GetTomasConsolidadaDetalle(string fecha, string tipo,int tipoInventarioId,int id)
+        {
+            try
+            {
+                var res = _repo.obtenerTomaInventarioConsolidadaDetalle(fecha, tipo, tipoInventarioId,id);
+                return StatusCode(200, res);
+            }
+            catch (Exception ex)
+            {
+                Log.Save(this, ex.ToString());
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }

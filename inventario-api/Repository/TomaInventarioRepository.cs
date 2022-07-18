@@ -293,5 +293,113 @@ namespace inventario_api.Repository
 
             return r;
         }
+        public Result<List<TomaInventarioConsolidadaCabecera>> obtenerTomaInventarioConsolidadaCabecera(string fecha, string tipo)
+        {
+            _bd = new Connection();
+            List<TomaInventarioConsolidadaCabecera> lista = new List<TomaInventarioConsolidadaCabecera>();
+            Result<List<TomaInventarioConsolidadaCabecera>> r = new Result<List<TomaInventarioConsolidadaCabecera>>();
+
+            using (SqlConnection con = _bd.sqlConnection)
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand(Queries.TomaConsolidadaCabecera, con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    sqlCommand.Parameters.Add("@fecha", SqlDbType.NVarChar).Value = fecha;
+                    sqlCommand.Parameters.Add("@tipo", SqlDbType.NVarChar).Value = tipo;
+                    sqlCommand.Connection = con;
+                    con.Open();
+
+                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                    {
+                        r.Success = true;
+                        while (reader.Read())
+                        {
+                            lista.Add(new TomaInventarioConsolidadaCabecera
+                            {
+                                Tipo = reader["Tipo"].ToString(),
+                                Nombre = reader["Nombre"].ToString(),
+                                Id = int.Parse(reader["Id"].ToString()),
+                                TipoInventarioId = int.Parse(reader["TipoInventarioId"].ToString()),
+                                TipoInventario = reader["TipoInventario"].ToString(),
+                                Fecha = reader["Fecha"].ToString(),
+                                CantidadInventarios = int.Parse(reader["CantidadInventarios"].ToString())
+                            });
+                        }
+                        r.Success = true;
+                        r.Response = lista;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    r.Success = false;
+                    r.Message = ex.Message;
+                }
+                finally
+                {
+                    con.Close();
+                    con.Dispose();
+                }
+            }
+
+            return r;
+        }
+        public Result<List<TomaInventarioConsolidadaDetalle>> obtenerTomaInventarioConsolidadaDetalle(string fecha, string tipo,int tipoInventarioId, int id)
+        {
+            _bd = new Connection();
+            List<TomaInventarioConsolidadaDetalle> lista = new List<TomaInventarioConsolidadaDetalle>();
+            Result<List<TomaInventarioConsolidadaDetalle>> r = new Result<List<TomaInventarioConsolidadaDetalle>>();
+
+            using (SqlConnection con = _bd.sqlConnection)
+            {
+                try
+                {
+                    SqlCommand sqlCommand = new SqlCommand(Queries.TomaConsolidadaDetalle, con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    sqlCommand.Parameters.Add("@fecha", SqlDbType.NVarChar).Value = fecha;
+                    sqlCommand.Parameters.Add("@tipo", SqlDbType.NVarChar).Value = tipo;
+                    sqlCommand.Parameters.Add("@tipoInventarioId", SqlDbType.Int).Value = tipoInventarioId;
+                    sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                    sqlCommand.Connection = con;
+                    con.Open();
+
+                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                    {
+                        r.Success = true;
+                        while (reader.Read())
+                        {
+                            lista.Add(new TomaInventarioConsolidadaDetalle
+                            {
+                                ArticuloId = int.Parse(reader["ArticuloId"].ToString()),
+                                Articulo = reader["Articulo"].ToString(),
+                                Cantidad = double.Parse(reader["Cantidad"].ToString()),
+                                UnidadMedida = reader["UnidadMedida"].ToString(),
+                                Codigo = reader["Codigo"].ToString(),
+                            });
+                        }
+                        r.Success = true;
+                        r.Response = lista;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    r.Success = false;
+                    r.Message = ex.Message;
+                }
+                finally
+                {
+                    con.Close();
+                    con.Dispose();
+                }
+            }
+
+            return r;
+        }
+
+
     }
 }

@@ -8,13 +8,15 @@ namespace inventario_api.Models
     public class InventarioCabecera
     {
         public int InventarioId { get; set; }
-        public DateTime FechaInicio { get; set; }
+        public DateTime FechaCreacion { get; set; }
         public DateTime FechaFin { get; set; }
         public string Estado { get; set; }
         public string ArchivoStock { get; set; }
         public int UsuarioId { get; set; }
         public int TipoInventarioId { get; set; }
         public int AreaId { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaVisualizacion { get; set; }
 
         public List<InventarioDetalle> Detalles{ get; set; }
 

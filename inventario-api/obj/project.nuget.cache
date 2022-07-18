@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mMJnTSVketM9Y3R7y3KzMKvbnjUa6hw0n6bRa8aX0TuV6SQMv9CDr7Nzl29LDGuFQZqjk7LZqZXAQEA5DXgtrA==",
+  "dgSpecHash": "lsOdhf+bq1SqawMFPSaSJSinGT8Hbrtay7/5ChrQhZsfDp5BPG0HMxDmOeq/9yIyyoYg9lIftcD1JGRTuGsVxw==",
   "success": true,
   "projectFilePath": "C:\\Users\\kevin\\Documents\\ABC Proyectos\\inventario-api-v2\\inventario-api\\inventario-api.csproj",
   "expectedPackageFiles": [
@@ -88,11 +88,7 @@
     "C:\\Users\\kevin\\.nuget\\packages\\system.threading.tasks.extensions\\4.3.0\\system.threading.tasks.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\kevin\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\kevin\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\kevin\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.22\\microsoft.netcore.app.host.win-x64.3.1.22.nupkg.sha512",
-    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+    "C:\\Users\\kevin\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
     {

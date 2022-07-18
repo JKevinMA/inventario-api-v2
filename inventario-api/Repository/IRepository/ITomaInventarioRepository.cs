@@ -14,5 +14,7 @@ namespace inventario_api.Repository.IRepository
         public Result<int> cerrarToma(TomaInventarioCabecera toma);
         public Result<List<TomaInventarioCabecera>> cerrarYObtenerTomasUsuarioCabecera(int inventarioId);
         public Result<List<TomaInventarioDetalle>> obtenerTomaUsuarioDetalle(int tomaInventarioId);
+        public Result<List<TomaInventarioConsolidadaCabecera>> obtenerTomaInventarioConsolidadaCabecera(string fecha, string tipo);
+        public Result<List<TomaInventarioConsolidadaDetalle>> obtenerTomaInventarioConsolidadaDetalle(string fecha, string tipo, int tipoInventarioId, int id);
     }
 }

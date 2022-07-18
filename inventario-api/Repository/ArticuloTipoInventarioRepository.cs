@@ -47,6 +47,7 @@ namespace inventario_api.Repository
                                 Empresa = reader["Empresa"].ToString(),
                                 EmpresaId = int.Parse(reader["EmpresaId"].ToString()),
                                 TipoInventario = reader["TipoInventario"].ToString(),
+                                Habilitado = bool.Parse(reader["Habilitado"].ToString()),
                             });
                         }
                         r.Success = true;
@@ -83,6 +84,7 @@ namespace inventario_api.Repository
                     sqlCommand.Parameters.AddWithValue("@TipoInventarioId", o.TipoInventarioId);
                     sqlCommand.Parameters.AddWithValue("@Orden", o.Orden);
                     sqlCommand.Parameters.AddWithValue("@Localizacion", o.Localizacion);
+                    sqlCommand.Parameters.AddWithValue("@Habilitado", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 
@@ -122,6 +124,7 @@ namespace inventario_api.Repository
                     sqlCommand.Parameters.AddWithValue("@TipoInventarioId", o.TipoInventarioId);
                     sqlCommand.Parameters.AddWithValue("@Orden", o.Orden);
                     sqlCommand.Parameters.AddWithValue("@Localizacion", o.Localizacion);
+                    sqlCommand.Parameters.AddWithValue("@Habilitado", o.Habilitado);
                     sqlCommand.Connection = con;
                     con.Open();
 

@@ -1,0 +1,36 @@
+19:42:24 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaInicio: 22/06/2022 05:00:00
+
+19:42:24 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaVisualizacion: 23/06/2022 01:30:00
+
+19:53:10 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaInicio: 22/06/2022 05:00:00
+
+19:53:10 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaVisualizacion: 22/06/2022 05:00:00
+
+19:56:40 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaInicio: 22/06/2022 05:00:00
+
+19:56:40 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaVisualizacion: 22/06/2022 20:30:00
+
+19:57:35 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaInicio: 22/06/2022 05:00:00
+
+19:57:35 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaVisualizacion: 23/06/2022 02:00:00
+
+20:04:09 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaInicio: 22/06/2022 05:00:00
+
+20:04:09 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaVisualizacion: 23/06/2022 20:03:00
+
+20:05:00 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaInicio: 22/06/2022 00:00:00
+
+20:05:00 - inventario_api.Repository.InventarioRepository / aperturarInventario(...)
+-> FechaVisualizacion: 23/06/2022 20:00:00
+

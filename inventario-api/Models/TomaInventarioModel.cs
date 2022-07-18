@@ -45,4 +45,25 @@ namespace inventario_api.Models
         public bool Cerrado { get; set; }
 
     }
+
+    public class TomaInventarioConsolidadaCabecera
+    {
+        public string Tipo { get; set; }
+        public string Nombre { get; set; }
+        public int Id { get; set; }
+        public int TipoInventarioId { get; set; }
+        public string TipoInventario { get; set; }
+        public string Fecha { get; set; }
+        public int CantidadInventarios { get; set; }
+    }
+
+    public class TomaInventarioConsolidadaDetalle
+    {
+        public int ArticuloId { get; set; }
+        public double Cantidad { get; set; }
+        public string UnidadMedida { get; set; }
+        public string Articulo { get; set; }
+        public string Codigo { get; set; }
+    }
+
 }

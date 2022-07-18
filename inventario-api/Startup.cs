@@ -41,6 +41,7 @@ namespace inventario_api
             services.AddScoped<IUnidadMedidaRepository, UnidadMedidaRepository>();
             services.AddScoped<IArticuloTipoInventarioRepository, ArticuloTipoInventarioRepository>();
             services.AddScoped<IUsuarioAreaRepository, UsuarioAreaRepository>();
+            services.AddScoped<IMovimientoRepository, MovimientoRepository>();
 
             services.AddCors(options => {
                 options.AddPolicy(name: MyAllowSpecificOrigins,

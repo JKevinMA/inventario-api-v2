@@ -23,6 +23,7 @@ namespace inventario_api.Models
         public string Local { get; set; }
         public int EmpresaId { get; set; }
         public string Empresa { get; set; }
+        public bool Habilitado { get; set; }
 
     }
 }

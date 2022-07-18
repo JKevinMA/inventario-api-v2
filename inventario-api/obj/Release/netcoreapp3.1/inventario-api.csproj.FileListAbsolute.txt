@@ -70,7 +70,6 @@ C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Rele
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\inventario-api.csproj.AssemblyReference.cache
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\inventario-api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\inventario-api.AssemblyInfoInputs.cache
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\inventario-api.AssemblyInfo.cs
@@ -85,3 +84,4 @@ C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Rele
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\System.Web.Http.dll
 C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\kevin\Documents\ABC Proyectos\inventario-api-v2\inventario-api\obj\Release\netcoreapp3.1\inventario-api.csproj.AssemblyReference.cache
